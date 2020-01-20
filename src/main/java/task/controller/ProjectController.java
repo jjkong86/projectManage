@@ -31,6 +31,7 @@ public class ProjectController {
 
 	@GetMapping(value = "/")
 	public String test() {
+		projectService.testData();
 		return "hello world!!";
 	}
 
@@ -39,9 +40,6 @@ public class ProjectController {
 //		if (result.hasErrors()) {
 //			String message = result.getFieldError().getDefaultMessage();
 //		}
-		if (param.getPageno() < 1) {
-			param.setPageno(0);
-		}
 		if (param.getSize() < 1) {
 			param.setSize(10);
 		}

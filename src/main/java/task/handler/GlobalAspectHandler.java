@@ -23,11 +23,11 @@ import task.util.JsonUtils;
 @Slf4j
 public class GlobalAspectHandler {
 
-    @Before("execution(* task..*.*(..))")
-    public void before(JoinPoint joinPoint) {
-        Signature signature = joinPoint.getSignature();
-        log.info("call method before :: {}", signature.getName());
-    }
+//    @Before("execution(* task..*.*(..))")
+//    public void before(JoinPoint joinPoint) {
+//        Signature signature = joinPoint.getSignature();
+//        log.info("call method before :: {}", signature.getName());
+//    }
 
     @Around("within(task.controller.*)")
     public Object logBefore(ProceedingJoinPoint point) throws Throwable {
@@ -49,9 +49,9 @@ public class GlobalAspectHandler {
         return resultVal;
     }
 
-    @After("execution(* task..*.*(..))")
-    public void after(JoinPoint joinPoint) {
-        Signature signature = joinPoint.getSignature();
-        log.info("call method after :: {}", signature.getName());
-    }
+//    @After("execution(* task..*.*(..))")
+//    public void after(JoinPoint joinPoint) {
+//        Signature signature = joinPoint.getSignature();
+//        log.info("call method after :: {}", signature.getName());
+//    }
 }
