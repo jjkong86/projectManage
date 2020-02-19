@@ -18,5 +18,5 @@ public class ProjectsRequest {
     private int pageno;
     private int size = 10;
     @Enumerated(EnumType.STRING)
-    private OrderedType type;
+    private OrderedType orderType;
 }

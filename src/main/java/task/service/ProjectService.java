@@ -40,7 +40,7 @@ public class ProjectService {
 
 	public List<ProjectListResponse> getProjectsAndOrdered(ProjectsRequest param) {
 		PageRequest pr = PageRequest.of(param.getPageno(), param.getSize(), Sort.Direction.DESC,
-				param.getType().getType());
+				param.getOrderType().getType());
 		Page<Project> result = projectRepository.findByIsOpenTrue(pr);
 		List<ProjectListResponse> list = new ArrayList<>();
 		for (Project project : result) {
